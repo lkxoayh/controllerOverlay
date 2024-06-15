@@ -11,6 +11,6 @@ The changes compared to it are:
 ### Setup
 
 Add it to OBS via a Browser source:
-* URL: https://gamepadviewer.com/?p=1&s=5&editcss=https://oekn5w.github.io/controllerOverlay/PS5_Display_Pics/PS5_White.css
+* URL: https://gamepadviewer.com/?p=1&s=5&editcss=https://oekn5w.github.io/controllerOverlay/PS5/PS5_White.css
 * Width: 1000
 * Height: 700
