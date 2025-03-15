@@ -1,0 +1,415 @@
+/*BEGIN PS5 Colorful Controller Styling*/
+.controller.ds4 {
+    background: url(Black_SkinNo_Buttons.png);
+    height: 700px;
+    width: 1200px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.2);
+    position: relative;
+}
+
+/* Add a vibrant rainbow glow effect around the controller */
+.controller.ds4:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    box-shadow: 
+        0 0 15px 2px rgba(255, 0, 0, 0.5),
+        0 0 30px 5px rgba(255, 165, 0, 0.4),
+        0 0 45px 8px rgba(255, 255, 0, 0.2),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    z-index: 1;
+    animation: rainbow-glow 10s infinite linear;
+}
+
+@keyframes rainbow-glow {
+    0% { box-shadow: 0 0 15px 2px rgba(255, 0, 0, 0.5), 0 0 30px 5px rgba(255, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    16.6% { box-shadow: 0 0 15px 2px rgba(255, 165, 0, 0.5), 0 0 30px 5px rgba(255, 165, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    33.3% { box-shadow: 0 0 15px 2px rgba(255, 255, 0, 0.5), 0 0 30px 5px rgba(255, 255, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    50% { box-shadow: 0 0 15px 2px rgba(0, 255, 0, 0.5), 0 0 30px 5px rgba(0, 255, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    66.6% { box-shadow: 0 0 15px 2px rgba(0, 0, 255, 0.5), 0 0 30px 5px rgba(0, 0, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    83.3% { box-shadow: 0 0 15px 2px rgba(75, 0, 130, 0.5), 0 0 30px 5px rgba(75, 0, 130, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    100% { box-shadow: 0 0 15px 2px rgba(238, 130, 238, 0.5), 0 0 30px 5px rgba(238, 130, 238, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+}
+
+/* Add a colorful background to the controller */
+.controller.ds4 {
+    background: url(Black_SkinNo_Buttons.png), radial-gradient(circle at center, rgba(0, 0, 0, 0), rgba(60, 0, 60, 0.2));
+    background-size: 100% 100%, 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Disconnected state */
+.ds4.disconnected div {
+    display: none;
+}
+
+.ds4.disconnected:after {
+    content: "CONTROLLER DISCONNECTED";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 700px;
+    color: #ff3a3a;
+    font-size: 28px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-shadow: 
+        0 0 10px #ff0000,
+        0 0 20px rgba(255, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    border-radius: 30px;
+    animation: disconnect-pulse 1.5s infinite alternate;
+}
+
+@keyframes disconnect-pulse {
+    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px rgba(255, 0, 0, 0.5); background: rgba(0, 0, 0, 0.7); }
+    100% { text-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255, 0, 0, 0.7); background: rgba(20, 0, 0, 0.8); }
+}
+
+/* Triggers with color */
+.ds4 .triggers {
+    width: 598px;
+    height: 90px;
+    position: absolute;
+    left: 299px;
+    top: 38px;
+}
+
+.ds4 .trigger {
+    width: 99px;
+    height: 100%;
+    background: url(Trigger_Pressed.png);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.ds4 .trigger.left {
+    float: left;
+    filter: hue-rotate(-90deg) saturate(2);
+}
+
+.ds4 .trigger.right {
+    float: right;
+    background-position-x: 99px;
+    filter: hue-rotate(90deg) saturate(2);
+}
+
+/* Bumpers with color */
+.ds4 .bumper {
+    width: 200px;
+    height: 45px;
+    background: url(Bumper.png) no-repeat;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.ds4 .bumpers {
+    position: absolute;
+    width: 672px;
+    height: 23px;
+    left: 263px;
+    top: 132px;
+}
+
+.ds4 .bumper.pressed {
+    opacity: 1;
+}
+
+.ds4 .bumper.left {
+    float: left;
+    filter: hue-rotate(-90deg) saturate(2) brightness(1.2);
+}
+
+.ds4 .bumper.right {
+    float: right;
+    transform: rotateY(180deg);
+    filter: hue-rotate(90deg) saturate(2) brightness(1.2);
+}
+
+/* Touchpad with color */
+.ds4 .touchpad {
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    left: 422px;
+    top: 74px;
+}
+
+.ds4 .touchpad.pressed {
+    background: url(Touchpad-Black.png) no-repeat center;
+    animation: touchpad-rainbow 0.5s ease;
+    filter: hue-rotate(180deg) saturate(1.5);
+}
+
+@keyframes touchpad-rainbow {
+    0% { filter: hue-rotate(0deg) saturate(1.5); transform: scale(0.98); }
+    50% { filter: hue-rotate(180deg) saturate(1.5); transform: scale(0.96); }
+    100% { filter: hue-rotate(360deg) saturate(1.5); transform: scale(0.98); }
+}
+
+/* PS Button with rainbow effect */
+.ds4 .meta {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 546px;
+    bottom: 264px;
+}
+
+.ds4 .meta.pressed {
+    background: url(Home.png) no-repeat center;
+    animation: ps-button-rainbow 2s linear infinite;
+}
+
+@keyframes ps-button-rainbow {
+    0% { filter: hue-rotate(0deg) brightness(1.2) saturate(2); }
+    100% { filter: hue-rotate(360deg) brightness(1.2) saturate(2); }
+}
+
+/* Face buttons with color */
+.ds4 .abxy {
+    position: absolute;
+    width: 170px;
+    height: 171px;
+    top: 200px;
+    left: 762px;
+}
+
+.ds4 .button {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: url(FaceButtons.png);
+    transition: all 0.1s ease;
+}
+
+.ds4 .button.pressed {
+    background-position-y: 55px;
+    transform: scale(0.95);
+}
+
+.ds4 .a {
+    background-position: 0 0;
+    bottom: 0px;
+    left: 58px;
+    filter: hue-rotate(100deg) saturate(2); /* Green for Cross */
+}
+
+.ds4 .b {
+    background-position: -57px 0;
+    top: 57px;
+    right: -3px;
+    filter: hue-rotate(0deg) saturate(2); /* Red for Circle */
+}
+
+.ds4 .x {
+    background-position: -113px 0;
+    top: 57px;
+    filter: hue-rotate(240deg) saturate(2); /* Blue for Square */
+}
+
+.ds4 .y {
+    background-position: 55px 0;
+    left: 58px;
+    bottom: 119px;
+    filter: hue-rotate(60deg) saturate(2); /* Yellow for Triangle */
+}
+
+.ds4 .a.pressed, .ds4 .b.pressed, .ds4 .x.pressed, .ds4 .y.pressed {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: button-pulse 0.2s ease;
+}
+
+@keyframes button-pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); }
+    50% { transform: scale(0.9); box-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
+    100% { transform: scale(0.95); box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+/* Sticks with color */
+.ds4 .sticks {
+    position: absolute;
+    width: 364px;
+    height: 105px;
+    top: 348px;
+    left: 422px;
+}
+
+.ds4 .stick {
+    position: absolute;
+    background: url(Sticks.png);
+    height: 94px;
+    width: 94px;
+    transition: all 0.2s ease;
+}
+
+.ds4 .stick.left {
+    top: 0;
+    left: 0;
+    filter: hue-rotate(240deg) saturate(1.5); /* Blue for left stick */
+}
+
+.ds4 .stick.right {
+    top: calc(100% - 105px);
+    left: calc(100% - 105px);
+    filter: hue-rotate(330deg) saturate(1.5); /* Purple for right stick */
+}
+
+.ds4 .stick.pressed.left {
+    background-position-x: -96px;
+    transform: scale(0.95);
+    filter: hue-rotate(240deg) saturate(2) brightness(1.3);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+}
+
+.ds4 .stick.pressed.right {
+    background-position-x: -192px;
+    transform: scale(0.95);
+    filter: hue-rotate(330deg) saturate(2) brightness(1.3);
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+}
+
+/* D-pad with color */
+.ds4 .dpad {
+    position: absolute;
+    width: 125px;
+    height: 126px;
+    top: 220px;
+    left: 286px;
+}
+
+.ds4 .face {
+    background: url(Dpad.png);
+    position: absolute;
+    transition: all 0.15s ease;
+}
+
+.ds4 .face.up, .ds4 .face.down {
+    width: 37px;
+    height: 52px;
+}
+
+.ds4 .face.left, .ds4 .face.right {
+    width: 52px;
+    height: 40px;
+}
+
+.ds4 .face.up {
+    left: 44px;
+    top: 0;
+    background-position: -37px 0px;
+    filter: hue-rotate(180deg) saturate(1.5); /* Cyan for up */
+}
+
+.ds4 .face.down {
+    left: 44px;
+    bottom: 0;
+    background-position: 0px 0;
+    filter: hue-rotate(300deg) saturate(1.5); /* Magenta for down */
+}
+
+.ds4 .face.left {
+    top: 45px;
+    left: 0;
+    background-position: 104px 0;
+    filter: hue-rotate(60deg) saturate(1.5); /* Yellow for left */
+}
+
+.ds4 .face.right {
+    top: 45px;
+    right: 0px;
+    background-position: 52px 0;
+    filter: hue-rotate(120deg) saturate(1.5); /* Green for right */
+}
+
+.ds4 .face.pressed {
+    background-position-y: 52px;
+    transform: scale(0.95);
+    filter: brightness(1.5) saturate(2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Start/Select buttons with color */
+.ds4 .back, .ds4 .start {
+    background: url(Select.png);
+    width: 26px;
+    height: 43px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.ds4 .start {
+    position: absolute;
+    left: 546px;
+    bottom: -30px;
+    filter: hue-rotate(120deg) saturate(1.5); /* Green tint */
+}
+
+.ds4 .back {
+    position: absolute;
+    left: 170px;
+    bottom: -30px;
+    filter: hue-rotate(240deg) saturate(1.5); /* Blue tint */
+}
+
+.ds4 .back.pressed, .ds4 .start.pressed {
+    opacity: 1;
+    filter: brightness(1.5) saturate(2);
+}
+
+/* Add color-changing light bar effect */
+.controller.ds4:after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 10px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+    background-size: 700% 100%;
+    border-radius: 5px;
+    opacity: 0.9;
+    z-index: 2;
+    animation: lightbar-rainbow 8s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes lightbar-rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 700% 50%; }
+}
+
+/* Add colorful accents to the controller body */
+.controller.ds4 {
+    background: url(Black_SkinNo_Buttons.png), 
+                radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.1), transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(0, 0, 255, 0.1), transparent 40%),
+                radial-gradient(circle at 30% 70%, rgba(0, 255, 0, 0.1), transparent 40%),
+                radial-gradient(circle at 70% 70%, rgba(255, 0, 255, 0.1), transparent 40%),
+                radial-gradient(circle at center, rgba(0, 0, 0, 0), rgba(30, 0, 30, 0.2));
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Add pulsing effect to the entire controller */
+.controller.ds4 {
+    animation: controller-pulse 4s infinite alternate;
+}
+
+@keyframes controller-pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.01); }
+}
+
+/*END PS5 Colorful Controller Styling*/ 
