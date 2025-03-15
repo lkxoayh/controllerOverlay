@@ -1,0 +1,340 @@
+/*BEGIN PS5 SCUF Gradient Controller Styling*/
+.controller.ps5.scuf-gradient {
+    background: url(Black_SkinNo_Buttons.png);
+    height: 700px;
+    width: 1200px;
+    position: relative;
+    /*    margin-left: -403px;
+        margin-top: -280px;*/
+}
+
+/* Add a gradient overlay to create the SCUF effect */
+.controller.ps5.scuf-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,0,128,0.5) 0%, rgba(0,183,255,0.5) 50%, rgba(0,255,136,0.5) 100%);
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.ps5.scuf-gradient.disconnected div {
+    display: none;
+}
+
+.ps5.scuf-gradient .triggers {
+    width: 598px;
+    height: 90px;
+    position: absolute;
+    left: 299px;
+    top: 38px;
+    z-index: 2;
+}
+
+.ps5.scuf-gradient .trigger {
+    width: 99px;
+    height: 100%;
+    background: url(Trigger_Pressed.png);
+    opacity: 0;
+}
+
+.ps5.scuf-gradient .trigger.left {
+    float: left;
+}
+
+.ps5.scuf-gradient .trigger.right {
+    float: right;
+    background-position-x: 99px;
+}
+
+.ps5.scuf-gradient .bumper {
+    width: 200px;
+    height: 45px;
+    background: url(Bumper.png) no-repeat;
+    opacity: 0;
+}
+
+.ps5.scuf-gradient .bumpers {
+    position: absolute;
+    width: 672px;
+    height: 23px;
+    left: 263px;
+    top: 132px;
+    z-index: 2;
+}
+
+.ps5.scuf-gradient .bumper.pressed {
+    opacity: 0.8;
+}
+
+.ps5.scuf-gradient .bumper.left {
+    float: left;
+}
+
+.ps5.scuf-gradient .bumper.right {
+    float: right;
+    transform: rotateY(180deg);
+}
+
+.ps5.scuf-gradient .touchpad {
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    left: 422px;
+    top: 74px;
+    z-index: 2;
+}
+
+.ps5.scuf-gradient .touchpad.pressed {
+    background: url(Touchpad.png) no-repeat center;
+}
+
+.ps5.scuf-gradient .meta {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 546px;
+    bottom: 264px;
+    z-index: 2;
+}
+
+.ps5.scuf-gradient .meta.pressed {
+    background: url(Home.png) no-repeat center;
+}
+
+.ps5.scuf-gradient .arrows {
+    position: absolute;
+    width: 352px;
+    height: 46px;
+    top: 142px;
+    left: 227px;
+    z-index: 2;
+}
+
+.ps5.scuf-gradient .back, .ps5.scuf-gradient .start {
+    background: url(Select.png);
+    width: 26px;
+    height: 43px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.ps5.scuf-gradient .start {
+    position: absolute;
+    left: 546px;
+    bottom: -30px;
+}
+
+.ps5.scuf-gradient .back {
+    position: absolute;
+    left: 170px;
+    bottom: -30px;
+}
+
+.ps5.scuf-gradient .back.pressed, .ps5.scuf-gradient .start.pressed {
+    opacity: 1;
+}
+
+.ps5.scuf-gradient .back {
+    float: left;
+}
+
+.ps5.scuf-gradient .start {
+    float: right;
+    background-position: 0px 0;
+}
+
+.ps5.scuf-gradient .abxy {
+    position: absolute;
+    width: 170px;
+    height: 171px;
+    top: 200px;
+    left: 762px;
+    z-index: 2;
+}
+
+/* Custom colored buttons for SCUF style */
+.ps5.scuf-gradient .button {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: url(FaceButtons.png);
+    filter: hue-rotate(140deg) saturate(1.5);
+}
+
+.ps5.scuf-gradient .button.pressed {
+    background-position-y: 55px;
+}
+
+.ps5.scuf-gradient .a {
+    background-position: 0 0;
+    bottom: 0px;
+    left: 58px;
+}
+
+.ps5.scuf-gradient .b {
+    background-position: -57px 0;
+    top: 57px;
+    right: -3px;
+}
+
+.ps5.scuf-gradient .x {
+    background-position: -113px 0;
+    top: 57px;
+}
+
+.ps5.scuf-gradient .y {
+    background-position: 55px 0;
+    left: 58px;
+    bottom: 119px;
+}
+
+.ps5.scuf-gradient .sticks {
+    position: absolute;
+    width: 364px;
+    height: 105px;
+    top: 348px;
+    left: 422px;
+    z-index: 2;
+}
+
+/* Custom colored sticks for SCUF style */
+.ps5.scuf-gradient .stick {
+    position: absolute;
+    background: url(Sticks.png);
+    height: 94px;
+    width: 94px;
+    filter: hue-rotate(240deg) saturate(1.5);
+}
+
+.ps5.scuf-gradient .stick.pressed.left {
+    background-position-x: -96px;
+}
+
+.ps5.scuf-gradient .stick.pressed.right {
+    background-position-x: -192px;
+}
+
+.ps5.scuf-gradient .stick.left {
+    top: 0;
+    left: 0;
+}
+
+.ps5.scuf-gradient .stick.right {
+    top: calc(100% - 105px);
+    left: calc(100% - 105px);
+}
+
+.ps5.scuf-gradient .dpad {
+    position: absolute;
+    width: 125px;
+    height: 126px;
+    top: 220px;
+    left: 286px;
+    z-index: 2;
+}
+
+/* Custom colored d-pad for SCUF style */
+.ps5.scuf-gradient .face {
+    background: url(Dpad.png);
+    position: absolute;
+    filter: hue-rotate(300deg) saturate(1.5);
+}
+
+.ps5.scuf-gradient .face.up, .ps5.scuf-gradient .face.down {
+    width: 37px;
+    height: 52px;
+}
+
+.ps5.scuf-gradient .face.left, .ps5.scuf-gradient .face.right {
+    width: 52px;
+    height: 40px;
+}
+
+.ps5.scuf-gradient .face.up {
+    left: 44px;
+    top: 0;
+    background-position: -37px 0px;
+}
+
+.ps5.scuf-gradient .face.down {
+    left: 44px;
+    bottom: 0;
+    background-position: 0px 0;
+}
+
+.ps5.scuf-gradient .face.left {
+    top: 45px;
+    left: 0;
+    background-position: 104px 0;
+}
+
+.ps5.scuf-gradient .face.right {
+    top: 45px;
+    right: 0px;
+    background-position: 52px 0;
+}
+
+.ps5.scuf-gradient .face.pressed {
+    background-position-y: 52px;
+}
+
+.ps5.scuf-gradient.half {
+    margin-top: -300px;
+}
+
+/* Add metallic effect to triggers when pressed */
+.ps5.scuf-gradient .trigger.pressed {
+    opacity: 0.8;
+    filter: brightness(1.5) contrast(1.2);
+}
+
+/* Add glow effect to buttons when pressed */
+.ps5.scuf-gradient .button.pressed::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,255,0.6) 0%, rgba(0,255,255,0) 70%);
+    pointer-events: none;
+}
+
+/* PS5 specific adaptive triggers effect */
+.ps5.scuf-gradient .trigger.pressed {
+    animation: adaptive-trigger-pulse 0.5s infinite alternate;
+}
+
+@keyframes adaptive-trigger-pulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 0.9; }
+}
+
+/* PS5 DualSense light bar effect */
+.ps5.scuf-gradient::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 8px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #ff0080, #00b7ff, #00ff88);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    z-index: 3;
+    animation: lightbar-pulse 3s infinite alternate;
+}
+
+@keyframes lightbar-pulse {
+    0% { opacity: 0.7; box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); }
+    100% { opacity: 1; box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); }
+}
+
+/*END PS5 SCUF Gradient Controller Styling*/ 

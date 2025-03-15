@@ -1,0 +1,427 @@
+/*BEGIN PS5 SCUF Galaxy Controller Styling*/
+.controller.ps5.scuf-galaxy {
+    background: url(Black_SkinNo_Buttons.png);
+    height: 700px;
+    width: 1200px;
+    position: relative;
+    /*    margin-left: -403px;
+        margin-top: -280px;*/
+}
+
+/* Add a galaxy overlay to create the SCUF effect */
+.controller.ps5.scuf-galaxy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(76, 0, 153, 0.5) 0%, rgba(25, 0, 51, 0.5) 100%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="100%" height="100%" fill="black"/><circle cx="10" cy="10" r="1" fill="white" opacity="0.8"/><circle cx="30" cy="15" r="0.8" fill="white" opacity="0.7"/><circle cx="50" cy="30" r="1.2" fill="white" opacity="0.9"/><circle cx="70" cy="40" r="0.6" fill="white" opacity="0.6"/><circle cx="90" cy="20" r="1" fill="white" opacity="0.8"/><circle cx="110" cy="60" r="0.8" fill="white" opacity="0.7"/><circle cx="130" cy="50" r="1.1" fill="white" opacity="0.9"/><circle cx="150" cy="70" r="0.7" fill="white" opacity="0.6"/><circle cx="170" cy="90" r="1" fill="white" opacity="0.8"/><circle cx="190" cy="30" r="0.9" fill="white" opacity="0.7"/><circle cx="20" cy="100" r="1.2" fill="white" opacity="0.9"/><circle cx="40" cy="120" r="0.6" fill="white" opacity="0.6"/><circle cx="60" cy="140" r="1" fill="white" opacity="0.8"/><circle cx="80" cy="160" r="0.8" fill="white" opacity="0.7"/><circle cx="100" cy="180" r="1.1" fill="white" opacity="0.9"/><circle cx="120" cy="190" r="0.7" fill="white" opacity="0.6"/><circle cx="140" cy="170" r="1" fill="white" opacity="0.8"/><circle cx="160" cy="150" r="0.9" fill="white" opacity="0.7"/><circle cx="180" cy="130" r="1.2" fill="white" opacity="0.9"/><circle cx="200" cy="110" r="0.6" fill="white" opacity="0.6"/></svg>');
+    background-size: 100% 100%, 400px 400px;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+    animation: galaxy-animation 60s linear infinite;
+}
+
+@keyframes galaxy-animation {
+    0% {
+        background-position: 0% 0%, 0px 0px;
+    }
+    100% {
+        background-position: 0% 0%, 400px 400px;
+    }
+}
+
+/* Add a nebula glow effect */
+.controller.ps5.scuf-galaxy::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 0, 255, 0.3) 0%, rgba(255, 0, 255, 0) 20%),
+        radial-gradient(circle at 70% 60%, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0) 20%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0) 40%);
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+    mix-blend-mode: screen;
+    animation: nebula-animation 20s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-animation {
+    0% {
+        background-position: 0% 0%, 0% 0%, 0% 0%;
+    }
+    100% {
+        background-position: 10% 10%, -10% -10%, 5% 5%;
+    }
+}
+
+.ps5.scuf-galaxy.disconnected div {
+    display: none;
+}
+
+.ps5.scuf-galaxy .triggers {
+    width: 598px;
+    height: 90px;
+    position: absolute;
+    left: 299px;
+    top: 38px;
+    z-index: 2;
+}
+
+.ps5.scuf-galaxy .trigger {
+    width: 99px;
+    height: 100%;
+    background: url(Trigger_Pressed.png);
+    opacity: 0;
+}
+
+.ps5.scuf-galaxy .trigger.left {
+    float: left;
+}
+
+.ps5.scuf-galaxy .trigger.right {
+    float: right;
+    background-position-x: 99px;
+}
+
+.ps5.scuf-galaxy .bumper {
+    width: 200px;
+    height: 45px;
+    background: url(Bumper.png) no-repeat;
+    opacity: 0;
+}
+
+.ps5.scuf-galaxy .bumpers {
+    position: absolute;
+    width: 672px;
+    height: 23px;
+    left: 263px;
+    top: 132px;
+    z-index: 2;
+}
+
+.ps5.scuf-galaxy .bumper.pressed {
+    opacity: 0.8;
+}
+
+.ps5.scuf-galaxy .bumper.left {
+    float: left;
+}
+
+.ps5.scuf-galaxy .bumper.right {
+    float: right;
+    transform: rotateY(180deg);
+}
+
+.ps5.scuf-galaxy .touchpad {
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    left: 422px;
+    top: 74px;
+    z-index: 2;
+}
+
+.ps5.scuf-galaxy .touchpad.pressed {
+    background: url(Touchpad.png) no-repeat center;
+}
+
+.ps5.scuf-galaxy .meta {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 546px;
+    bottom: 264px;
+    z-index: 2;
+}
+
+.ps5.scuf-galaxy .meta.pressed {
+    background: url(Home.png) no-repeat center;
+}
+
+.ps5.scuf-galaxy .arrows {
+    position: absolute;
+    width: 352px;
+    height: 46px;
+    top: 142px;
+    left: 227px;
+    z-index: 2;
+}
+
+.ps5.scuf-galaxy .back, .ps5.scuf-galaxy .start {
+    background: url(Select.png);
+    width: 26px;
+    height: 43px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.ps5.scuf-galaxy .start {
+    position: absolute;
+    left: 546px;
+    bottom: -30px;
+}
+
+.ps5.scuf-galaxy .back {
+    position: absolute;
+    left: 170px;
+    bottom: -30px;
+}
+
+.ps5.scuf-galaxy .back.pressed, .ps5.scuf-galaxy .start.pressed {
+    opacity: 1;
+}
+
+.ps5.scuf-galaxy .back {
+    float: left;
+}
+
+.ps5.scuf-galaxy .start {
+    float: right;
+    background-position: 0px 0;
+}
+
+.ps5.scuf-galaxy .abxy {
+    position: absolute;
+    width: 170px;
+    height: 171px;
+    top: 200px;
+    left: 762px;
+    z-index: 2;
+}
+
+/* Custom colored buttons for SCUF style */
+.ps5.scuf-galaxy .button {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: url(FaceButtons.png);
+    filter: hue-rotate(220deg) saturate(1.5);
+}
+
+.ps5.scuf-galaxy .button.pressed {
+    background-position-y: 55px;
+    filter: hue-rotate(300deg) saturate(2) brightness(1.5);
+}
+
+/* Add glow effect to buttons */
+.ps5.scuf-galaxy .button::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,0,255,0.3) 0%, rgba(255,0,255,0) 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ps5.scuf-galaxy .button.pressed::after {
+    opacity: 1;
+}
+
+.ps5.scuf-galaxy .a {
+    background-position: 0 0;
+    bottom: 0px;
+    left: 58px;
+}
+
+.ps5.scuf-galaxy .b {
+    background-position: -57px 0;
+    top: 57px;
+    right: -3px;
+}
+
+.ps5.scuf-galaxy .x {
+    background-position: -113px 0;
+    top: 57px;
+}
+
+.ps5.scuf-galaxy .y {
+    background-position: 55px 0;
+    left: 58px;
+    bottom: 119px;
+}
+
+.ps5.scuf-galaxy .sticks {
+    position: absolute;
+    width: 364px;
+    height: 105px;
+    top: 348px;
+    left: 422px;
+    z-index: 2;
+}
+
+/* Custom colored sticks for SCUF style */
+.ps5.scuf-galaxy .stick {
+    position: absolute;
+    background: url(Sticks.png);
+    height: 94px;
+    width: 94px;
+    filter: hue-rotate(220deg) saturate(1.5);
+}
+
+.ps5.scuf-galaxy .stick.pressed.left {
+    background-position-x: -96px;
+    filter: hue-rotate(300deg) saturate(2) brightness(1.5);
+}
+
+.ps5.scuf-galaxy .stick.pressed.right {
+    background-position-x: -192px;
+    filter: hue-rotate(300deg) saturate(2) brightness(1.5);
+}
+
+.ps5.scuf-galaxy .stick.left {
+    top: 0;
+    left: 0;
+}
+
+.ps5.scuf-galaxy .stick.right {
+    top: calc(100% - 105px);
+    left: calc(100% - 105px);
+}
+
+.ps5.scuf-galaxy .dpad {
+    position: absolute;
+    width: 125px;
+    height: 126px;
+    top: 220px;
+    left: 286px;
+    z-index: 2;
+}
+
+/* Custom colored d-pad for SCUF style */
+.ps5.scuf-galaxy .face {
+    background: url(Dpad.png);
+    position: absolute;
+    filter: hue-rotate(220deg) saturate(1.5);
+}
+
+.ps5.scuf-galaxy .face.up, .ps5.scuf-galaxy .face.down {
+    width: 37px;
+    height: 52px;
+}
+
+.ps5.scuf-galaxy .face.left, .ps5.scuf-galaxy .face.right {
+    width: 52px;
+    height: 40px;
+}
+
+.ps5.scuf-galaxy .face.up {
+    left: 44px;
+    top: 0;
+    background-position: -37px 0px;
+}
+
+.ps5.scuf-galaxy .face.down {
+    left: 44px;
+    bottom: 0;
+    background-position: 0px 0;
+}
+
+.ps5.scuf-galaxy .face.left {
+    top: 45px;
+    left: 0;
+    background-position: 104px 0;
+}
+
+.ps5.scuf-galaxy .face.right {
+    top: 45px;
+    right: 0px;
+    background-position: 52px 0;
+}
+
+.ps5.scuf-galaxy .face.pressed {
+    background-position-y: 52px;
+    filter: hue-rotate(300deg) saturate(2) brightness(1.5);
+}
+
+.ps5.scuf-galaxy.half {
+    margin-top: -300px;
+}
+
+/* Add cosmic effect to triggers when pressed */
+.ps5.scuf-galaxy .trigger.pressed {
+    opacity: 0.8;
+    filter: hue-rotate(300deg) saturate(2) brightness(1.5);
+}
+
+/* Add star twinkle animation */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.controller.ps5.scuf-galaxy::before {
+    animation: galaxy-animation 60s linear infinite, twinkle 3s ease-in-out infinite;
+}
+
+/* PS5 specific adaptive triggers effect */
+.ps5.scuf-galaxy .trigger.pressed {
+    animation: galaxy-trigger-pulse 0.5s infinite alternate;
+}
+
+@keyframes galaxy-trigger-pulse {
+    0% { opacity: 0.6; filter: hue-rotate(260deg) saturate(1.5) brightness(1.2); }
+    100% { opacity: 0.9; filter: hue-rotate(320deg) saturate(2) brightness(1.5); }
+}
+
+/* PS5 DualSense light bar effect */
+.ps5.scuf-galaxy .controller-lightbar {
+    position: absolute;
+    width: 200px;
+    height: 8px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #9900ff, #ff00ff);
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(153, 0, 255, 0.7);
+    z-index: 3;
+    animation: galaxy-lightbar-pulse 3s infinite alternate;
+}
+
+@keyframes galaxy-lightbar-pulse {
+    0% { opacity: 0.7; box-shadow: 0 0 10px rgba(153, 0, 255, 0.7); background-position: 0% 0%; }
+    100% { opacity: 1; box-shadow: 0 0 20px rgba(255, 0, 255, 0.9); background-position: 100% 0%; }
+}
+
+/* PS5 haptic feedback visualization */
+.ps5.scuf-galaxy .haptic-feedback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, transparent 90%, rgba(255, 0, 255, 0.1) 100%);
+    opacity: 0;
+    z-index: 1;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.ps5.scuf-galaxy .button.pressed ~ .haptic-feedback,
+.ps5.scuf-galaxy .trigger.pressed ~ .haptic-feedback,
+.ps5.scuf-galaxy .bumper.pressed ~ .haptic-feedback,
+.ps5.scuf-galaxy .stick.pressed ~ .haptic-feedback,
+.ps5.scuf-galaxy .face.pressed ~ .haptic-feedback {
+    animation: haptic-pulse 0.5s ease-out;
+}
+
+@keyframes haptic-pulse {
+    0% { opacity: 0.7; transform: scale(0.95); }
+    100% { opacity: 0; transform: scale(1.05); }
+}
+
+/*END PS5 SCUF Galaxy Controller Styling*/ 
