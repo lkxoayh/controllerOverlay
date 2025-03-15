@@ -1,0 +1,329 @@
+/*BEGIN PS5 SCUF Carbon Fiber Controller Styling*/
+.controller.ds4.scuf-carbon {
+    background: url(Black_SkinNo_Buttons.png);
+    height: 700px;
+    width: 1200px;
+    position: relative;
+    /*    margin-left: -403px;
+        margin-top: -280px;*/
+}
+
+/* Add a carbon fiber overlay to create the SCUF effect */
+.controller.ds4.scuf-carbon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(27deg, rgba(0,0,0,0.8) 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, rgba(0,0,0,0.8) 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, rgba(0,0,0,0.8) 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, rgba(0,0,0,0.8) 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, rgba(0,0,0,0.5) 10px, transparent 10px),
+        linear-gradient(rgba(0,0,0,0.3) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3)),
+        linear-gradient(rgba(0,0,0,0.3) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3));
+    background-size: 20px 20px;
+    background-color: rgba(30, 30, 30, 0.4);
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+    mix-blend-mode: overlay;
+}
+
+/* Add a subtle blue glow around the controller */
+.controller.ds4.scuf-carbon::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 25px;
+    background: radial-gradient(ellipse at center, rgba(0,150,255,0.2) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ds4.scuf-carbon.disconnected div {
+    display: none;
+}
+
+.ds4.scuf-carbon .triggers {
+    width: 598px;
+    height: 90px;
+    position: absolute;
+    left: 299px;
+    top: 38px;
+    z-index: 2;
+}
+
+.ds4.scuf-carbon .trigger {
+    width: 99px;
+    height: 100%;
+    background: url(Trigger_Pressed.png);
+    opacity: 0;
+}
+
+.ds4.scuf-carbon .trigger.left {
+    float: left;
+}
+
+.ds4.scuf-carbon .trigger.right {
+    float: right;
+    background-position-x: 99px;
+}
+
+.ds4.scuf-carbon .bumper {
+    width: 200px;
+    height: 45px;
+    background: url(Bumper.png) no-repeat;
+    opacity: 0;
+}
+
+.ds4.scuf-carbon .bumpers {
+    position: absolute;
+    width: 672px;
+    height: 23px;
+    left: 263px;
+    top: 132px;
+    z-index: 2;
+}
+
+.ds4.scuf-carbon .bumper.pressed {
+    opacity: 0.8;
+}
+
+.ds4.scuf-carbon .bumper.left {
+    float: left;
+}
+
+.ds4.scuf-carbon .bumper.right {
+    float: right;
+    transform: rotateY(180deg);
+}
+
+.ds4.scuf-carbon .touchpad {
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    left: 422px;
+    top: 74px;
+    z-index: 2;
+}
+
+.ds4.scuf-carbon .touchpad.pressed {
+    background: url(Touchpad.png) no-repeat center;
+}
+
+.ds4.scuf-carbon .meta {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 546px;
+    bottom: 264px;
+    z-index: 2;
+}
+
+.ds4.scuf-carbon .meta.pressed {
+    background: url(Home.png) no-repeat center;
+}
+
+.ds4.scuf-carbon .arrows {
+    position: absolute;
+    width: 352px;
+    height: 46px;
+    top: 142px;
+    left: 227px;
+    z-index: 2;
+}
+
+.ds4.scuf-carbon .back, .ds4.scuf-carbon .start {
+    background: url(Select.png);
+    width: 26px;
+    height: 43px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.ds4.scuf-carbon .start {
+    position: absolute;
+    left: 546px;
+    bottom: -30px;
+}
+
+.ds4.scuf-carbon .back {
+    position: absolute;
+    left: 170px;
+    bottom: -30px;
+}
+
+.ds4.scuf-carbon .back.pressed, .ds4.scuf-carbon .start.pressed {
+    opacity: 1;
+}
+
+.ds4.scuf-carbon .back {
+    float: left;
+}
+
+.ds4.scuf-carbon .start {
+    float: right;
+    background-position: 0px 0;
+}
+
+.ds4.scuf-carbon .abxy {
+    position: absolute;
+    width: 170px;
+    height: 171px;
+    top: 200px;
+    left: 762px;
+    z-index: 2;
+}
+
+/* Custom colored buttons for SCUF style */
+.ds4.scuf-carbon .button {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: url(FaceButtons.png);
+    filter: brightness(1.2) contrast(1.2);
+}
+
+.ds4.scuf-carbon .button.pressed {
+    background-position-y: 55px;
+    filter: brightness(1.5) contrast(1.5) hue-rotate(180deg);
+}
+
+.ds4.scuf-carbon .a {
+    background-position: 0 0;
+    bottom: 0px;
+    left: 58px;
+}
+
+.ds4.scuf-carbon .b {
+    background-position: -57px 0;
+    top: 57px;
+    right: -3px;
+}
+
+.ds4.scuf-carbon .x {
+    background-position: -113px 0;
+    top: 57px;
+}
+
+.ds4.scuf-carbon .y {
+    background-position: 55px 0;
+    left: 58px;
+    bottom: 119px;
+}
+
+.ds4.scuf-carbon .sticks {
+    position: absolute;
+    width: 364px;
+    height: 105px;
+    top: 348px;
+    left: 422px;
+    z-index: 2;
+}
+
+/* Custom colored sticks for SCUF style */
+.ds4.scuf-carbon .stick {
+    position: absolute;
+    background: url(Sticks.png);
+    height: 94px;
+    width: 94px;
+    filter: brightness(0.8) contrast(1.5);
+}
+
+.ds4.scuf-carbon .stick.pressed.left {
+    background-position-x: -96px;
+    filter: brightness(1.2) contrast(1.5) hue-rotate(180deg);
+}
+
+.ds4.scuf-carbon .stick.pressed.right {
+    background-position-x: -192px;
+    filter: brightness(1.2) contrast(1.5) hue-rotate(180deg);
+}
+
+.ds4.scuf-carbon .stick.left {
+    top: 0;
+    left: 0;
+}
+
+.ds4.scuf-carbon .stick.right {
+    top: calc(100% - 105px);
+    left: calc(100% - 105px);
+}
+
+.ds4.scuf-carbon .dpad {
+    position: absolute;
+    width: 125px;
+    height: 126px;
+    top: 220px;
+    left: 286px;
+    z-index: 2;
+}
+
+/* Custom colored d-pad for SCUF style */
+.ds4.scuf-carbon .face {
+    background: url(Dpad.png);
+    position: absolute;
+    filter: brightness(0.8) contrast(1.5);
+}
+
+.ds4.scuf-carbon .face.up, .ds4.scuf-carbon .face.down {
+    width: 37px;
+    height: 52px;
+}
+
+.ds4.scuf-carbon .face.left, .ds4.scuf-carbon .face.right {
+    width: 52px;
+    height: 40px;
+}
+
+.ds4.scuf-carbon .face.up {
+    left: 44px;
+    top: 0;
+    background-position: -37px 0px;
+}
+
+.ds4.scuf-carbon .face.down {
+    left: 44px;
+    bottom: 0;
+    background-position: 0px 0;
+}
+
+.ds4.scuf-carbon .face.left {
+    top: 45px;
+    left: 0;
+    background-position: 104px 0;
+}
+
+.ds4.scuf-carbon .face.right {
+    top: 45px;
+    right: 0px;
+    background-position: 52px 0;
+}
+
+.ds4.scuf-carbon .face.pressed {
+    background-position-y: 52px;
+    filter: brightness(1.2) contrast(1.5) hue-rotate(180deg);
+}
+
+.ds4.scuf-carbon.half {
+    margin-top: -300px;
+}
+
+/* Add metallic effect to triggers when pressed */
+.ds4.scuf-carbon .trigger.pressed {
+    opacity: 0.8;
+    filter: brightness(1.5) contrast(1.2);
+}
+
+/* Add blue LED effect to controller edges */
+.controller.ds4.scuf-carbon::before {
+    box-shadow: 0 0 15px 2px rgba(0, 150, 255, 0.5) inset;
+}
+
+/*END PS5 SCUF Carbon Fiber Controller Styling*/ 
