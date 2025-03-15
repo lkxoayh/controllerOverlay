@@ -310,10 +310,37 @@ background-position: 0 -70px;
 /* PS5 Black Controller Specific Styling */
 .ds4.black {
     background: url(Black_SkinNo_Buttons.png);
+    position: relative;
+}
+
+/* Add a subtle blue LED glow effect around the controller */
+.ds4.black:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    box-shadow: 
+        0 0 15px 2px rgba(0, 140, 255, 0.3),
+        0 0 30px 5px rgba(0, 89, 255, 0.2),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Enhanced button colors and effects */
+.ds4.black .button.pressed {
+    background-position-y: 55px;
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.7);
 }
 
 .ds4.black .touchpad.pressed {
     background: url(Touchpad-Black.png) no-repeat center;
+    animation: touchpad-press 0.2s ease;
+    box-shadow: inset 0 0 15px rgba(0, 140, 255, 0.4);
 }
 
 .ds4.black .back, .ds4.black .start {
@@ -322,27 +349,98 @@ background-position: 0 -70px;
     height: 43px;
 }
 
-/* Adaptive Trigger Effect Simulation */
-.ds4 .trigger.active {
+.ds4.black .back.pressed, .ds4.black .start.pressed {
+    opacity: 1;
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(0, 195, 255, 0.5));
+}
+
+/* Enhanced stick effects */
+.ds4.black .stick {
+    transition: all 0.2s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.ds4.black .stick.pressed.left,
+.ds4.black .stick.pressed.right {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+}
+
+/* Enhanced D-pad effects */
+.ds4.black .face.pressed {
+    background-position-y: 52px;
+    transform: scale(0.95);
+    filter: brightness(1.2);
+}
+
+/* Enhanced trigger effects */
+.ds4.black .trigger.active {
     animation: trigger-resistance 0.3s infinite alternate;
+    background-color: rgba(0, 140, 255, 0.2);
 }
 
 @keyframes trigger-resistance {
     0% { opacity: 0.3; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.8; }
 }
 
-/* Haptic Feedback Simulation */
-.ds4.haptic {
-    animation: haptic-feedback 0.1s;
+/* Enhanced meta button (PS button) */
+.ds4.black .meta.pressed {
+    background: url(Home.png) no-repeat center;
+    animation: ps-button-glow 0.8s ease infinite;
 }
 
-@keyframes haptic-feedback {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(0); }
-    75% { transform: translateX(2px); }
-    100% { transform: translateX(0); }
+@keyframes ps-button-glow {
+    0% { filter: drop-shadow(0 0 2px rgba(0, 140, 255, 0.3)); }
+    50% { filter: drop-shadow(0 0 10px rgba(0, 195, 255, 0.7)); }
+    100% { filter: drop-shadow(0 0 2px rgba(0, 140, 255, 0.3)); }
+}
+
+/* Enhanced bumper effects */
+.ds4.black .bumper.pressed {
+    opacity: 1;
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(0, 195, 255, 0.5));
+}
+
+/* Color theme for the controller when active */
+.ds4.black.active {
+    box-shadow: 
+        0 0 20px rgba(0, 140, 255, 0.4),
+        0 0 40px rgba(0, 89, 255, 0.2);
+    transition: box-shadow 0.5s ease;
+}
+
+/* Enhanced haptic feedback visual effect */
+.ds4.black.haptic {
+    animation: haptic-feedback-enhanced 0.1s;
+}
+
+@keyframes haptic-feedback-enhanced {
+    0% { transform: translateX(0); filter: brightness(1); }
+    25% { transform: translateX(-2px); filter: brightness(1.05); }
+    50% { transform: translateX(0); filter: brightness(1); }
+    75% { transform: translateX(2px); filter: brightness(1.05); }
+    100% { transform: translateX(0); filter: brightness(1); }
+}
+
+/* Disconnected state with improved visuals */
+.ds4.black.disconnected:after {
+    content: "CONTROLLER DISCONNECTED";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 700px;
+    color: #ff3a3a;
+    font-size: 28px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-shadow: 
+        0 0 10px #ff0000,
+        0 0 20px rgba(255, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    border-radius: 30px;
 }
 
 /*END PS5 Black Controller Styling*/
