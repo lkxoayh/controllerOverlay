@@ -1,19 +1,18 @@
-/*BEGIN PS5 Controller Styling*/
-.controller.ds4 {
-    background: url(Black_SkinNo_Buttons.png);
+/* BEGIN PS5 Controller Styling */
+.controller.ps5 {
+    background: url(PS5_SkinNo_Buttons.png);
     height: 700px;
     width: 1200px;
-    /*    margin-left: -403px;
-        margin-top: -280px;*/
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.2); /* Subtle blue glow for PS5 aesthetic */
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.3); /* Blue glow for PS5 aesthetics */
+    position: relative;
 }
 
-.ds4.disconnected div {
+.ps5.disconnected div {
     display: none;
 }
 
-.ds4.disconnected:after {
+.ps5.disconnected:after {
     content: "CONTROLLER DISCONNECTED";
     position: absolute;
     width: 100%;
@@ -26,70 +25,61 @@
     text-shadow: 0 0 10px #ff0000;
 }
 
-.ds4 .triggers {
-    width: 598px;
+.ps5 .triggers {
+    width: 600px;
     height: 90px;
     position: absolute;
-    left: 299px;
-    top: 38px;
+    left: 300px;
+    top: 30px;
 }
 
-.ds4 .trigger {
-    width: 99px;
+.ps5 .trigger {
+    width: 100px;
     height: 100%;
-    background: url(Trigger_Pressed.png);
+    background: url(PS5_Trigger.png);
     opacity: 0;
     transition: opacity 0.15s ease;
 }
 
-.ds4 .trigger.left {
+.ps5 .trigger.left {
     float: left;
 }
 
-.ds4 .trigger.right {
+.ps5 .trigger.right {
     float: right;
-    background-position-x: 99px;
 }
 
-.ds4 .bumper {
+.ps5 .bumpers {
+    position: absolute;
+    width: 650px;
+    height: 45px;
+    left: 275px;
+    top: 125px;
+}
+
+.ps5 .bumper {
     width: 200px;
     height: 45px;
-    background: url(Bumper.png) no-repeat;
+    background: url(PS5_Bumper.png) no-repeat;
     opacity: 0;
     transition: opacity 0.15s ease;
 }
 
-.ds4 .bumpers {
-    position: absolute;
-    width: 672px;
-    height: 23px;
-    left: 263px;
-    top: 132px;
-}
-
-.ds4 .bumper.pressed {
+.ps5 .bumper.pressed {
     opacity: 1;
 }
 
-.ds4 .bumper.left {
-    float: left;
-}
-
-.ds4 .bumper.right {
-    float: right;
-    transform: rotateY(180deg);
-}
-
-.ds4 .touchpad {
-    width: 350px;
-    height: 300px;
+.ps5 .touchpad {
+    width: 360px;
+    height: 200px;
     position: absolute;
-    left: 422px;
-    top: 74px;
+    left: 420px;
+    top: 75px;
+    background: url(PS5_Touchpad.png);
 }
 
-.ds4 .touchpad.pressed {
-    background: url(Touchpad-Black.png) no-repeat center;
+.ps5 .touchpad.pressed {
+    background: url(PS5_Touchpad_Pressed.png);
     animation: touchpad-press 0.2s ease;
 }
 
@@ -99,224 +89,52 @@
     100% { transform: scale(1); }
 }
 
-.ds4 .meta {
-    width: 100px;
-    height: 100px;
+.ps5 .buttons {
     position: absolute;
-    left: 546px;
-    bottom: 264px;
+    width: 200px;
+    height: 200px;
+    top: 250px;
+    left: 800px;
 }
 
-.ds4 .meta.pressed {
-    background: url(Home.png) no-repeat center;
-    animation: pulse 0.5s ease;
-}
-
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
-.ds4 .p0{
-background-position: 0 -6px;
-}
-.ds4 .p1{
-background-position: 0 -28px;
-}
-.ds4 .p2{
-background-position: 0 -49px;
-}
-.ds4 .p3{
-background-position: 0 -70px;
-}*/
-.ds4 .arrows {
-    position: absolute;
-    width: 352px;
-    height: 46px;
-    top: 142px;
-    left: 227px;
-}
-
-.ds4 .back, .ds4 .start {
-    background: url(Select.png);
-    width: 26px;
-    height: 43px;
-    opacity: 0;
-    transition: opacity 0.15s ease;
-}
-.ds4 .start {
-    position: absolute;
-    left: 546px;
-    bottom: -30px;
-}
-.ds4 .back {
-    position: absolute;
-    left: 170px;
-    bottom: -30px;
-}
-
-
-.ds4 .back.pressed, .ds4 .start.pressed {
-    opacity: 1;
-}
-
-.ds4 .back {
-    float: left;
-}
-
-.ds4 .start {
-    float: right;
-    background-position: 0px 0;
-}
-
-.ds4 .abxy {
-    position: absolute;
-    width: 170px;
-    height: 171px;
-    top: 200px;
-    left: 762px;
-}
-
-.ds4 .button {
+.ps5 .button {
     position: absolute;
     width: 55px;
     height: 55px;
-    background: url(FaceButtons.png);
+    background: url(PS5_FaceButtons.png);
     transition: transform 0.1s ease;
 }
 
-.ds4 .button.pressed {
-    background-position-y: 55px;
+.ps5 .button.pressed {
     transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.8);
 }
 
-.ds4 .a {
-    background-position: 0 0;
-    bottom: 0px;
-    left: 58px;
-}
-
-.ds4 .b {
-    background-position: -57px 0;
-    top: 57px;
-    right: -3px;
-}
-
-.ds4 .x {
-    background-position: -113px 0;
-    top: 57px;
-}
-
-.ds4 .y {
-    background-position: 55px 0;
-    left: 58px;
-    bottom: 119px;
-}
-
-.ds4 .sticks {
+.ps5 .stick {
     position: absolute;
-    width: 364px;
-    height: 105px;
-    top: 348px;
-    left: 422px;
-}
-
-.ds4 .stick {
-    position: absolute;
-    background: url(Sticks.png);
+    background: url(PS5_Sticks.png);
     height: 94px;
     width: 94px;
     transition: transform 0.1s ease;
 }
 
-.ds4 .stick.pressed.left {
-    background-position-x: -96px;
+.ps5 .stick.left {
+    top: 380px;
+    left: 290px;
+}
+
+.ps5 .stick.right {
+    top: 380px;
+    left: 750px;
+}
+
+.ps5 .stick.pressed {
     transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.8);
 }
 
-.ds4 .stick.pressed.right {
-    background-position-x: -192px;
-    transform: scale(0.95);
-}
-
-.ds4 .stick.left {
-    top: 0;
-    left: 0;
-}
-
-.ds4 .stick.right {
-    top: calc(100% - 105px);
-    left: calc(100% - 105px);
-}
-
-.ds4 .dpad {
-    position: absolute;
-    width: 125px;
-    height: 126px;
-    top: 220px;
-    left: 286px;
-}
-
-.ds4 .face {
-    background: url(Dpad.png);
-    position: absolute;
-    transition: all 0.15s ease;
-}
-
-.ds4 .face.up, .ds4 .face.down {
-    width: 37px;
-    height: 52px;
-}
-
-.ds4 .face.left, .ds4 .face.right {
-    width: 52px;
-    height: 40px;
-}
-
-.ds4 .face.up {
-    left: 44px;
-    top: 0;
-    background-position: -37px 0px;
-}
-
-.ds4 .face.down {
-    left: 44px;
-    bottom: 0;
-    background-position: 0px 0;
-}
-
-.ds4 .face.left {
-    top: 45px;
-    left: 0;
-    background-position: 104px 0;
-}
-
-.ds4 .face.right {
-    top: 45px;
-    right: 0px;
-    background-position: 52px 0;
-}
-
-.ds4 .face.pressed {
-    background-position-y: 52px;
-    transform: scale(0.95);
-    filter: brightness(1.5) grayscale(0.5);
-    box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
-}
-
-.ds4.half {
-    margin-top: -300px;
-}
-
-/* PS5 Black Controller Specific Styling */
-.ds4.black {
-    background: url(Black_SkinNo_Buttons.png);
-    position: relative;
-}
-
-/* Add a more vibrant LED glow effect around the controller */
-.ds4.black:before {
+/* Enhanced LED Glow */
+.ps5:before {
     content: "";
     position: absolute;
     top: 0;
@@ -324,10 +142,8 @@ background-position: 0 -70px;
     right: 0;
     bottom: 0;
     border-radius: 30px;
-    box-shadow: 
-        0 0 15px 2px rgba(0, 140, 255, 0.5),
+    box-shadow: 0 0 15px 2px rgba(0, 140, 255, 0.5),
         0 0 30px 5px rgba(0, 89, 255, 0.4),
-        0 0 45px 8px rgba(0, 60, 255, 0.2),
         inset 0 0 10px rgba(255, 255, 255, 0.2);
     pointer-events: none;
     z-index: 1;
@@ -335,253 +151,7 @@ background-position: 0 -70px;
 }
 
 @keyframes controller-ambient-glow {
-    0% { box-shadow: 0 0 15px 2px rgba(0, 140, 255, 0.5), 0 0 30px 5px rgba(0, 89, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
-    25% { box-shadow: 0 0 15px 2px rgba(0, 217, 255, 0.5), 0 0 30px 5px rgba(0, 183, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
-    50% { box-shadow: 0 0 15px 2px rgba(89, 0, 255, 0.5), 0 0 30px 5px rgba(60, 0, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
-    75% { box-shadow: 0 0 15px 2px rgba(255, 0, 242, 0.5), 0 0 30px 5px rgba(255, 0, 200, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
-    100% { box-shadow: 0 0 15px 2px rgba(255, 0, 85, 0.5), 0 0 30px 5px rgba(255, 0, 55, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); }
+    0% { box-shadow: 0 0 15px rgba(0, 140, 255, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(0, 89, 255, 0.4); }
+    100% { box-shadow: 0 0 15px rgba(0, 140, 255, 0.5); }
 }
-
-/* Enhanced button colors and effects */
-.ds4.black .button.pressed {
-    background-position-y: 55px;
-    transform: scale(0.95);
-    box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
-}
-
-/* Colorful button glow effects */
-.ds4.black .a.pressed {
-    box-shadow: 0 0 15px rgba(0, 255, 128, 0.8); /* Green glow for A/Cross */
-}
-
-.ds4.black .b.pressed {
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Red glow for B/Circle */
-}
-
-.ds4.black .x.pressed {
-    box-shadow: 0 0 15px rgba(0, 85, 255, 0.8); /* Blue glow for X/Square */
-}
-
-.ds4.black .y.pressed {
-    box-shadow: 0 0 15px rgba(255, 200, 0, 0.8); /* Yellow glow for Y/Triangle */
-}
-
-.ds4.black .touchpad.pressed {
-    background: url(Touchpad-Black.png) no-repeat center;
-    animation: touchpad-press 0.2s ease;
-    box-shadow: inset 0 0 20px rgba(0, 140, 255, 0.6);
-    background-color: rgba(0, 60, 255, 0.1);
-}
-
-.ds4.black .back, .ds4.black .start {
-    background-image: url(Start.png);
-    width: 26px;
-    height: 43px;
-}
-
-.ds4.black .back.pressed, .ds4.black .start.pressed {
-    opacity: 1;
-    filter: brightness(1.3) drop-shadow(0 0 8px rgba(0, 195, 255, 0.7));
-}
-
-/* Enhanced stick effects with color */
-.ds4.black .stick {
-    transition: all 0.2s ease;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.ds4.black .stick.left {
-    box-shadow: 0 0 8px rgba(0, 140, 255, 0.3);
-}
-
-.ds4.black .stick.right {
-    box-shadow: 0 0 8px rgba(255, 0, 140, 0.3);
-}
-
-.ds4.black .stick.pressed.left {
-    transform: scale(0.95);
-    box-shadow: 0 0 15px rgba(0, 195, 255, 0.7);
-    filter: hue-rotate(-30deg) brightness(1.2);
-}
-
-.ds4.black .stick.pressed.right {
-    transform: scale(0.95);
-    box-shadow: 0 0 15px rgba(255, 0, 140, 0.7);
-    filter: hue-rotate(30deg) brightness(1.2);
-}
-
-/* Enhanced D-pad effects with grey color */
-.ds4.black .face {
-    transition: all 0.15s ease;
-}
-
-.ds4.black .face.up.pressed {
-    background-position-y: 52px;
-    transform: scale(0.95);
-    filter: brightness(1.5) grayscale(1);
-    box-shadow: 0 0 10px rgba(180, 180, 180, 0.8);
-    background-color: rgba(150, 150, 150, 0.3);
-}
-
-.ds4.black .face.down.pressed {
-    background-position-y: 52px;
-    transform: scale(0.95);
-    filter: brightness(1.5) grayscale(1);
-    box-shadow: 0 0 10px rgba(180, 180, 180, 0.8);
-    background-color: rgba(150, 150, 150, 0.3);
-}
-
-.ds4.black .face.left.pressed {
-    background-position-y: 52px;
-    transform: scale(0.95);
-    filter: brightness(1.5) grayscale(1);
-    box-shadow: 0 0 10px rgba(180, 180, 180, 0.8);
-    background-color: rgba(150, 150, 150, 0.3);
-}
-
-.ds4.black .face.right.pressed {
-    background-position-y: 52px;
-    transform: scale(0.95);
-    filter: brightness(1.5) grayscale(1);
-    box-shadow: 0 0 10px rgba(180, 180, 180, 0.8);
-    background-color: rgba(150, 150, 150, 0.3);
-}
-
-/* Enhanced trigger effects with color */
-.ds4.black .trigger {
-    transition: all 0.2s ease;
-}
-
-.ds4.black .trigger.left.active {
-    animation: trigger-resistance-left 0.3s infinite alternate;
-    background-color: rgba(0, 140, 255, 0.3);
-}
-
-.ds4.black .trigger.right.active {
-    animation: trigger-resistance-right 0.3s infinite alternate;
-    background-color: rgba(255, 0, 140, 0.3);
-}
-
-@keyframes trigger-resistance-left {
-    0% { opacity: 0.3; filter: hue-rotate(0deg); }
-    100% { opacity: 0.9; filter: hue-rotate(-30deg) brightness(1.2); }
-}
-
-@keyframes trigger-resistance-right {
-    0% { opacity: 0.3; filter: hue-rotate(0deg); }
-    100% { opacity: 0.9; filter: hue-rotate(30deg) brightness(1.2); }
-}
-
-/* Enhanced meta button (PS button) with rainbow effect */
-.ds4.black .meta.pressed {
-    background: url(Home.png) no-repeat center;
-    animation: ps-button-rainbow 2s ease infinite;
-}
-
-@keyframes ps-button-rainbow {
-    0% { filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.7)) brightness(1.2); }
-    16.6% { filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.7)) brightness(1.2); }
-    33.3% { filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7)) brightness(1.2); }
-    50% { filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.7)) brightness(1.2); }
-    66.6% { filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.7)) brightness(1.2); }
-    83.3% { filter: drop-shadow(0 0 5px rgba(75, 0, 130, 0.7)) brightness(1.2); }
-    100% { filter: drop-shadow(0 0 5px rgba(238, 130, 238, 0.7)) brightness(1.2); }
-}
-
-/* Enhanced bumper effects with color */
-.ds4.black .bumper.left.pressed {
-    opacity: 1;
-    filter: brightness(1.3) drop-shadow(0 0 8px rgba(0, 195, 255, 0.7));
-}
-
-.ds4.black .bumper.right.pressed {
-    opacity: 1;
-    filter: brightness(1.3) drop-shadow(0 0 8px rgba(255, 0, 195, 0.7));
-}
-
-/* Color theme for the controller when active */
-.ds4.black.active {
-    box-shadow: 
-        0 0 20px rgba(0, 140, 255, 0.5),
-        0 0 40px rgba(0, 89, 255, 0.3);
-    transition: box-shadow 0.5s ease;
-    animation: controller-active-pulse 4s infinite alternate;
-}
-
-@keyframes controller-active-pulse {
-    0% { box-shadow: 0 0 20px rgba(0, 140, 255, 0.5), 0 0 40px rgba(0, 89, 255, 0.3); }
-    50% { box-shadow: 0 0 25px rgba(140, 0, 255, 0.5), 0 0 50px rgba(89, 0, 255, 0.3); }
-    100% { box-shadow: 0 0 20px rgba(255, 0, 140, 0.5), 0 0 40px rgba(255, 0, 89, 0.3); }
-}
-
-/* Enhanced haptic feedback visual effect */
-.ds4.black.haptic {
-    animation: haptic-feedback-enhanced 0.1s;
-}
-
-@keyframes haptic-feedback-enhanced {
-    0% { transform: translateX(0); filter: brightness(1); }
-    25% { transform: translateX(-2px); filter: brightness(1.1) hue-rotate(-10deg); }
-    50% { transform: translateX(0); filter: brightness(1); }
-    75% { transform: translateX(2px); filter: brightness(1.1) hue-rotate(10deg); }
-    100% { transform: translateX(0); filter: brightness(1); }
-}
-
-/* Disconnected state with improved visuals */
-.ds4.black.disconnected:after {
-    content: "CONTROLLER DISCONNECTED";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 700px;
-    color: #ff3a3a;
-    font-size: 28px;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    text-shadow: 
-        0 0 10px #ff0000,
-        0 0 20px rgba(255, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    border-radius: 30px;
-    animation: disconnect-pulse 1.5s infinite alternate;
-}
-
-@keyframes disconnect-pulse {
-    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px rgba(255, 0, 0, 0.5); background: rgba(0, 0, 0, 0.7); }
-    100% { text-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255, 0, 0, 0.7); background: rgba(20, 0, 0, 0.8); }
-}
-
-/* Add color-changing light bar effect */
-.ds4.black:after {
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 8px;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #ff0055, #ff00aa, #aa00ff, #5500ff, #0055ff);
-    border-radius: 4px;
-    opacity: 0.8;
-    z-index: 2;
-    animation: lightbar-color-cycle 8s infinite linear;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
-}
-
-@keyframes lightbar-color-cycle {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Add subtle color accents to the controller body */
-.ds4.black {
-    background: url(Black_SkinNo_Buttons.png), radial-gradient(circle at center, rgba(0, 0, 0, 0), rgba(0, 30, 60, 0.1));
-    background-size: 100% 100%, 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/*END PS5 Black Controller Styling*/
